@@ -185,15 +185,16 @@ export const execute = async () => {
       try {
         const placeQuotesTx = new Transaction().add(...instructions);
 
-        const placeQuotesTxId = await sendAndConfirmTransaction(
-          connection,
-          placeQuotesTx,
-          [traderKeypair],
-          {
-            skipPreflight: true,
-            commitment: "confirmed",
-          }
-        );
+       const placeQuotesTxId = await sendAndConfirmTransaction(
+         connection,
+         placeQuotesTx,
+         [traderKeypair],
+         {
+           skipPreflight: true,
+           commitment: "confirmed",
+         }
+       );
+
 
         console.log(
           "Place quotes",
